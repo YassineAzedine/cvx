@@ -16,5 +16,13 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('cvs','CvController@index');
+Route::get('cvs/create','CvController@create');
+Route::post('cvs','CvController@store');
+Route::get('cvs/{id}/edit','CvController@edite');
+Route::put('cvs/{id}','CvController@update');
+Route::delete('cvs/{id}','CvController@destroy');
+
+
 
 Route::get('/home', 'HomeController@index')->name('home');
