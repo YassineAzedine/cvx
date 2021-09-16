@@ -3,7 +3,7 @@
  <div class="container">
      <div class="row">
          <div class="col-12">
-            <form action="{{url('cvs')}} " method="post" >
+            <form action="{{ url('cvs') }} " method="post" >
                 @csrf
                 <div class="form-group">
                     <label for="">Titre</label>
