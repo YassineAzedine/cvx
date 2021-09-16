@@ -25,12 +25,17 @@
                               <td>{{$cv->presentation}}</td>
                               <td>{{$cv->created_at}}</td>
                               <td>
-                                  <a href="" class="btn btn-warning">detailles</a>
+           
+<form action="{{url('cvs/'.$cv->id)}}" method="POST">
+
+    <input type="hidden" name="_method" value="delete">
+@csrf
+                       <a href="" class="btn btn-warning">detailles</a>
                                   <a href="{{url('cvs/'.$cv->id.'/edit')}}" class="btn btn-default">Edite</a>
-                                  <a href="" class="btn btn-danger  ">Suppression</a>
 
+<button href="{{url('cvs/'.$cv->id)}}" class="btn btn-danger  ">Suppression</button>
 
-                              </td>
+</form>                 </td>
 
                           </tr>
                           @endforeach

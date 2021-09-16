@@ -44,9 +44,14 @@ class CvController extends Controller
         return redirect('cvs');
     }
 // permet d supprimer un cv
-    public function destroy()
+    public function destroy(Request $request ,$id)
+
+
     {
-        return view('home');
+        $cv = CV::find($id);
+        $cv->delete();
+        return redirect('cvs');
+        
     }
     
 }
