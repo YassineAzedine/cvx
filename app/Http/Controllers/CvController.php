@@ -28,14 +28,20 @@ class CvController extends Controller
   return redirect('cvs');
     }
     // permet de recuperer un cv puis de le mettre dans un le formulaire
-    public function edit()
+    public function edit($id)
     {
-        return view('home');
+        $cvs = Cv::find($id);
+        return view('cvs.edit',['cv'=>$cvs]);
+
     }
     // permet de modifier un cv
-    public function update()
+    public function update(Request $request ,$id)
     {
-        return view('home');
+        $cv = Cv::find($id);
+        $cv -> titre = $request->input('titre');
+        $cv -> presentation = $request->input('presentation');
+        $cv ->save();
+        return redirect('cvs');
     }
 // permet d supprimer un cv
     public function destroy()

@@ -26,7 +26,7 @@
                               <td>{{$cv->created_at}}</td>
                               <td>
                                   <a href="" class="btn btn-warning">detailles</a>
-                                  <a href="" class="btn btn-default">Edite</a>
+                                  <a href="{{url('cvs/'.$cv->id.'/edit')}}" class="btn btn-default">Edite</a>
                                   <a href="" class="btn btn-danger  ">Suppression</a>
 
 
