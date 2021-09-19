@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cv;
+use App\Http\Requests\CvRequest;
+
 
 class CvController extends Controller
 {
@@ -19,7 +21,7 @@ class CvController extends Controller
         return view('cvs.create');
     }
     // enregister un cv
-    public function store(Request $request)
+    public function store(CvRequest $request)
     {
        $cv = new Cv();
        $cv -> titre = $request->input('titre');
@@ -35,7 +37,7 @@ class CvController extends Controller
 
     }
     // permet de modifier un cv
-    public function update(Request $request ,$id)
+    public function update(CvRequest $request ,$id)
     {
         $cv = Cv::find($id);
         $cv -> titre = $request->input('titre');
@@ -44,7 +46,7 @@ class CvController extends Controller
         return redirect('cvs');
     }
 // permet d supprimer un cv
-    public function destroy(Request $request ,$id)
+    public function destroy(CvRequest $request ,$id)
 
 
     {
